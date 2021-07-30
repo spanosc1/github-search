@@ -98,7 +98,7 @@ class App extends React.Component {
    * @param {String} term Term to be searched against by API
    */
   search(term) {
-    this.setState({term});
+    this.setState({term, endOfResults: false});
     const url = `${searchURL}${term}&order=desc&page=1&per_page=20`;
     fetch(url)
     .then((response) => response.json())
