@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
 }
+
 .brand {
   height: 40px;
 }
@@ -41,4 +42,31 @@
 .headerResults {
   color: #8d8d8d;
   margin-left: 15px;
+}
+
+@media only screen and (max-width: 576px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .brand {
+    height: 30px;
+  }
+
+  .headerInput {
+    width: 50%;
+    margin: 0px 10px;
+    font-size: 0.9em;
+  }
+
+  .searchButton {
+    display: none;
+  }
+
+  .headerResults {
+    margin-left: 0px;
+    font-size: 0.9em;
+    width: 50px;
+    text-align: center;
+  }
 }

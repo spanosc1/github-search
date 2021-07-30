@@ -20,5 +20,19 @@
 }
 
 .userName {
-  line-height: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  line-height: 30px;
+}
+
+@media only screen and (max-width: 576px) {
+  .userImg {
+    height: 60px;
+  }
+  
+  .userName {
+    height: 60px;
+    max-width: 500px;
+  }
 }

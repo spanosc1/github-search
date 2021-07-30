@@ -14,6 +14,7 @@
   background-color: #161C22;
   width: 50%;
   height: auto;
+  max-height: 90%;
   border-radius: 10px;
   position: relative;
   display: flex;
@@ -21,6 +22,7 @@
   align-items: center;
   padding: 20px;
   color: white;
+  overflow-y: auto;
 }
 
 .closeModal {
@@ -46,6 +48,7 @@
   font-size: 2em;
   margin: 10px 0px;
   text-decoration: none;
+  text-align: center;
 }
 
 .modalName span {
@@ -55,6 +58,7 @@
 
 .modalP {
   margin: 5px 0px;
+  text-align: center;
 }
 
 .modalBio {
@@ -75,6 +79,7 @@
   align-items: center;
   justify-content: center;
   margin: 10px 0px;
+  line-height: 40px;
   font-weight: bold;
 }
 
@@ -88,4 +93,12 @@ a.repos {
 
 a.blog {
   background-color: #F78166;
+}
+
+@media only screen and (max-width: 576px) {
+  .modal {
+    width: 90%;
+    max-height: 90%;
+    padding: 10px;
+  }
 }

@@ -148,7 +148,7 @@ class App extends React.Component {
           <div className="divider"></div>
           <p className="modalP">{email || "no email available"}</p>
           <a className="modalP" href={`https://www.github.com/${login}?tab=repositories`} target="__blank">{public_repos} public repos</a>
-          <p className="modalP">Joind: {Moment(created_at).format('MMM DD, YYYY')} | Last updated: {Moment(updated_at).format('MMM DD, YYYY')}</p>
+          <p className="modalP">Joined: {Moment(created_at).format('MMM DD, YYYY')}<br/>Last updated: {Moment(updated_at).format('MMM DD, YYYY')}</p>
           <p className="modalP modalBio">{bio}</p>
           <a className="modalButton profile" href={html_url} target="__blank">Profile</a>
           <a className="modalButton repos" href={`https://www.github.com/${login}?tab=repositories`} target="__blank">Repositories</a>

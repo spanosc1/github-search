@@ -9,3 +9,9 @@
   text-align: center;
   margin-top: 20px;
 }
+
+@media only screen and (max-width: 576px) {
+  .resultsContainer {
+    padding: 10px 15px;
+  }
+}
