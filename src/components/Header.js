@@ -31,7 +31,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <img className="brand" src={github}/>
+        <img className="brand" src={github} alt="GitHub"/>
         <input
           className="headerInput"
           value={this.state.term}
@@ -39,7 +39,7 @@ class Header extends React.Component {
           placeholder="Search by username or email"
         />
         <button className="searchButton" onClick={() => this.props.onSearch(this.state.term)}>Search</button>
-        {this.props.results &&
+        {(this.props.results || this.props.results === 0) &&
           <p className="headerResults">{this.props.results} results</p>
         }
       </div>

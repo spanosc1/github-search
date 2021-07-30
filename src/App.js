@@ -9,21 +9,8 @@ import Result from './components/Result';
 import './App.css';
 import './css/Modal.css';
 
-const searchURL = 'https://api.github.com/search/users?q=';
+const searchURL = 'https://api.github.com/search/users?';
 const profileURL = 'https://api.github.com/users/';
-
-// const modalStyle = {
-//   overlay: {
-//     backgroundColor: 'rgba(0,0,0,0.7)',
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center'
-//   },
-//   content: {
-//     backgroundColor: '#161C22',
-//     width: '50%'
-//   }
-// };
 
 class App extends React.Component {
   constructor(props) {
@@ -76,12 +63,17 @@ class App extends React.Component {
    */
   fetchNextPage() {
     this.setState({fetching: true});
-    const url = `${searchURL}${this.state.term}&order=desc&page=${this.state.page}&per_page=20`;
-    fetch(url)
+    const query = searchURL + 'q=' + encodeURIComponent(`${this.state.term} in:name in:email`) + `&per_page=20&page=${this.state.page}`;
+    
+    fetch(query)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.items);
-      if(data.items.length < 20)
+      console.log(data);
+      if(data.message)
+      {
+        alert("An error occured");
+      }
+      else if(data.items.length < 20)
       {
         this.setState({fetching: false, endOfResults: true, users: [...this.state.users, ...data.items]});
       }
@@ -99,12 +91,20 @@ class App extends React.Component {
    */
   search(term) {
     this.setState({term, endOfResults: false});
-    const url = `${searchURL}${term}&order=desc&page=1&per_page=20`;
-    fetch(url)
+    const query = searchURL + 'q=' + encodeURIComponent(`${term} in:name in:email`) + '&per_page=20&page=1';
+
+    fetch(query)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      this.setState({users: data.items, results: data.total_count});
+      if(data.message)
+      {
+        alert("An error occured");
+      }
+      else if(data.items)
+      {
+        this.setState({users: data.items, results: data.total_count});
+      }
     });
   }
 
@@ -142,11 +142,11 @@ class App extends React.Component {
           overlayClassName="overlay"
         >
           <button className="closeModal" onClick={() => this.closeModal()}>X</button>
-          <img className="modalImg" src={avatar_url}/>
+          <img className="modalImg" src={avatar_url} alt={name}/>
           <a className="modalName" href={html_url} target="__blank">{name} <span>{login}</span></a>
           <p className="modalP modalLoc">{location || "no location given"}</p>
           <div className="divider"></div>
-          <p className="modalP">{email || "no email given"}</p>
+          <p className="modalP">{email || "no email available"}</p>
           <a className="modalP" href={`https://www.github.com/${login}?tab=repositories`} target="__blank">{public_repos} public repos</a>
           <p className="modalP">Joind: {Moment(created_at).format('MMM DD, YYYY')} | Last updated: {Moment(updated_at).format('MMM DD, YYYY')}</p>
           <p className="modalP modalBio">{bio}</p>
