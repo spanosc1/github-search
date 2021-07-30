@@ -9,3 +9,5 @@ The app will search automatically when the user stops typing for 1 second, when 
 The results are paginated by 20 results per page and will fetch the next page when the user scrolls near the bottom.
 
 Clicking a search result will display a modal with more of the users information, including links to parts of their GitHub profile and a blog, portfolio, or website if they have included one.
+
+Deployed at: https://stormy-bayou-74420.herokuapp.com/
