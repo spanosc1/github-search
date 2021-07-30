@@ -1,0 +1,91 @@
+.overlay {
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal {
+  background-color: #161C22;
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+.closeModal {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.modalImg {
+  height: 200px;
+  border-radius: 100px;
+}
+
+.modalName {
+  font-size: 2em;
+  margin: 10px 0px;
+  text-decoration: none;
+}
+
+.modalName span {
+  color: #8d8d8d;
+  margin-left: 10px;
+}
+
+.modalP {
+  margin: 5px 0px;
+}
+
+.modalBio {
+  margin-top: 20px;
+  line-height: 26px;
+  width: 500px;
+  max-width: 90%;
+  color: white;
+  text-align: center;
+}
+
+.modalButton {
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+  font-weight: bold;
+}
+
+a.profile {
+  background-color: #238636;
+}
+
+a.repos {
+  background-color: #58A6FF;
+}
+
+a.blog {
+  background-color: #F78166;
+}

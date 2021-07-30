@@ -1,0 +1,24 @@
+.userContainer {
+  border-bottom: 1px #686868 solid; 
+  color: white;
+  padding: 15px 0px;
+  display: flex;
+  cursor: pointer;
+}
+
+.userContainer:hover {
+  border-bottom: 1px white solid; 
+}
+
+.userImg {
+  height: 80px;
+  border-radius: 50px;
+}
+
+.userInfoView {
+  margin-left: 20px;
+}
+
+.userName {
+  line-height: 80px;
+}
