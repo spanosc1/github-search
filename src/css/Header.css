@@ -33,6 +33,7 @@
   outline: none;
   border: 1px #686868 solid;
   cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .searchButton:hover {

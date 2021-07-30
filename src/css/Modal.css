@@ -81,6 +81,7 @@
   margin: 10px 0px;
   line-height: 40px;
   font-weight: bold;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 a.profile {
@@ -93,6 +94,10 @@ a.repos {
 
 a.blog {
   background-color: #F78166;
+}
+
+.modalButton:hover {
+  filter: brightness(1.2);
 }
 
 @media only screen and (max-width: 576px) {
